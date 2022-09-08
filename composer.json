@@ -1,0 +1,49 @@
+{
+  "name": "ktscript/moysklad",
+  "description": "PHP SDK Moysklad API 1.2 AddOn",
+  "keywords": [
+    "moysklad",
+    "rest",
+    "api"
+  ],
+  "support": {
+    "issues": "https://github.com/ktscript/moysklad/issues"
+  },
+  "minimum-stability": "stable",
+  "homepage": "https://github.com/ktscript/moysklad",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Dmitry Zykov",
+      "email": "d.i.zykov@gmail.com",
+      "role": "master"
+    },
+    {
+      "name": "Viktor Fursenko",
+      "email": "va.fursenko@yandex.ru",
+      "role": "developer"
+    },
+    {
+      "name": "ktscript",
+      "email": "webdev@ktscript.ru",
+      "role": "master, developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.3",
+    "guzzlehttp/guzzle": "^7.0",
+    "ext-json": "*",
+    "jms/serializer": "^3.10",
+    "doctrine/annotations": "^1.11",
+    "yogarine/doctrine-annotation-autoload": "^0.3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "MoySklad\\": "src/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
