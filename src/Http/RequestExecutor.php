@@ -11,6 +11,7 @@ use MoySklad\Entity\MetaEntity;
 use MoySklad\Util\Exception\ApiClientException;
 use MoySklad\Util\Param\Param;
 use MoySklad\Util\Serializer\SerializerInstance;
+use JMS\Serializer\SerializationContext;
 use MoySklad\Util\StringsTrait;
 
 /**
@@ -275,6 +276,8 @@ class RequestExecutor
     {
         $strBody = null;
         if (!is_null($this->body)) {
+            //$context = SerializationContext::create()->setSerializeNull(true);
+            //$strBody = $this->serializer->serialize($this->body, SerializerInstance::JSON_FORMAT, $context);
             $strBody = $this->serializer->serialize($this->body, SerializerInstance::JSON_FORMAT);
         }
 
@@ -292,6 +295,8 @@ class RequestExecutor
     {
         $strBody = null;
         if (!is_null($this->body)) {
+            //$context = SerializationContext::create()->setSerializeNull(true);
+            //$strBody = $this->serializer->serialize($this->body, SerializerInstance::JSON_FORMAT, $context);
             $strBody = $this->serializer->serialize($this->body, SerializerInstance::JSON_FORMAT);
         }
 

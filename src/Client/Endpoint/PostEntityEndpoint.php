@@ -21,6 +21,9 @@ trait PostEntityEndpoint
             throw new \Exception('The trait cannot be used outside the EntityClientBase class');
         }
 
+	array_map(function($el) use ($newEntity) { unSET($newEntity->{$el}); }, ['id', 'accountId']);
+\Log::debug('dddd '.json_encode($newEntity));
+
         return RequestExecutor::path($this->getApi(), $this->getPath())->body($newEntity)->post($this->getMetaEntityClass());
     }
 }

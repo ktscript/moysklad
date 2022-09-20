@@ -7,6 +7,7 @@ use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
 use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
 use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
+use JMS\Serializer\SerializationContext;
 use MoySklad\Entity\MetaEntity;
 use MoySklad\Entity\Barcode;
 
@@ -30,8 +31,13 @@ class SerializerInstance
 
     public static function getInstance(): Serializer
     {
-        if (is_null(self::$instance)) {
+        if (is_null(self::$instance)) {	   
+
             self::$instance = SerializerBuilder::create()
+    		/*->setSerializationContextFactory(function () {
+        		return SerializationContext::create()
+            			->setSerializeNull(true);
+	        })*/
                 ->setPropertyNamingStrategy(
                     new SerializedNameAnnotationStrategy(
                         new IdenticalPropertyNamingStrategy()
@@ -55,6 +61,7 @@ class SerializerInstance
                 )
                 ->addDefaultHandlers()
                 ->build();
+
         }
 
         return self::$instance;

@@ -12,12 +12,12 @@ class MetaEntity
     /**
      * @Type("string")
      */
-    public $id;
+//    public $id;
 
     /**
      * @Type("string")
      */
-    public $accountId;
+//    public $accountId;
 
     /**
      * @Type("MoySklad\Entity\Meta")
