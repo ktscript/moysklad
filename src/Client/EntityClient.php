@@ -313,6 +313,15 @@ class EntityClient
         return new RetailDrawerCashOutClient($this->api);
     }
 
+    /**
+     * @return ProductEnterClient
+     */
+    public function enter(): ProductEnterClient
+    {
+        return new ProductEnterClient($this->api);
+    }
+
+
     public function getAllClassObjects(string $class): array
     {
         return $this->byClass($class)->getList()->rows;
@@ -358,13 +367,5 @@ class EntityClient
     public function webhook(): WebHookClient
     {
         return new WebHookClient($this->api);
-    }
-
-    /**
-     * @return ProductEnterClient
-     */
-    public function productEnter(): ProductEnterClient
-    {
-        return new ProductEnterClient($this->api);
     }
 }

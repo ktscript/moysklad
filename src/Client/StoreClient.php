@@ -5,6 +5,7 @@ namespace MoySklad\Client;
 use MoySklad\ApiClient;
 use MoySklad\Client\Endpoint\DeleteEntitiesEndpoint;
 use MoySklad\Client\Endpoint\DeleteEntityEndpoint;
+use MoySklad\Client\Endpoint\FirstEntityEndpoint;
 use MoySklad\Client\Endpoint\GetEntitiesListEndpoint;
 use MoySklad\Client\Endpoint\GetEntityEndpoint;
 use MoySklad\Client\Endpoint\GetMetadataAttributeEndpoint;
@@ -18,6 +19,7 @@ class StoreClient extends EntityClientBase
 {
     use
         GetEntitiesListEndpoint,
+	FirstEntityEndpoint,
         PostEntityEndpoint,
         PostEntitiesEndpoint,
         DeleteEntityEndpoint,

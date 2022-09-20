@@ -11,6 +11,7 @@ use MoySklad\Client\Endpoint\GetMetadataAttributeEndpoint;
 use MoySklad\Client\Endpoint\PostEntitiesEndpoint;
 use MoySklad\Client\Endpoint\PostEntityEndpoint;
 use MoySklad\Client\Endpoint\PutEntityEndpoint;
+use MoySklad\Client\Endpoint\FirstEntityEndpoint;
 use MoySklad\Entity\AbstractListEntity;
 use MoySklad\Entity\Document\PurchaseOrder;
 use MoySklad\Entity\ListEntity;
@@ -23,6 +24,7 @@ class PurchaseOrderClient extends EntityClientBase
     use
         GetEntitiesListEndpoint,
         GetEntityEndpoint,
+	FirstEntityEndpoint,
         PutEntityEndpoint,
         PostEntityEndpoint,
         DeleteEntityEndpoint,
