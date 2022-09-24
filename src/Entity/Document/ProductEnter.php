@@ -3,7 +3,9 @@
 namespace MoySklad\Entity\Document;
 
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\Exclude;
 use MoySklad\Entity\MetaEntity;
+use JMS\Serializer\Annotation\Groups;
 use MoySklad\Util\Object\Annotation\Generator;
 
 use MoySklad\Entity\ListEntity;
@@ -37,6 +39,7 @@ class ProductEnter extends MetaEntity
 
     /**
      * @Type("string")
+     * Exclude(if="empty(object)")
      */
     public $name;
 
@@ -78,6 +81,7 @@ class ProductEnter extends MetaEntity
 
     /**
      * @Type("int")
+     * Groups({"get"})
      */
     public $sum;
 
@@ -94,7 +98,8 @@ class ProductEnter extends MetaEntity
     public $store;
 
     /**
-     * @Type("MoySklad\Entity\Document\ProductEnterPositions")
+     * @Type("array<MoySklad\Entity\Document\ProductEnterPosition>")
+     * @Generator(type="objectArray", objectQuantity=3)
      */
     public $positions;
 }

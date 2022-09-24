@@ -3,7 +3,9 @@
 namespace MoySklad\Entity;
 
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\Exclude;
 use MoySklad\Util\Object\Annotation\Generator;
+use JMS\Serializer\Annotation\Groups;
 
 /**
  * Trait StockTrait
@@ -25,44 +27,60 @@ trait StockTrait
 {
     /**
      * @Type("string")
+     * Groups({"get"})
+     * Exclude(if="empty(object)")
      */
     public $article;
 
     /**
      * Базовая цена
      * @Type("int")
+     * Groups({"get"})
+     * Exclude(if="empty(object)")
      */
     public $price;
 
     /**
      * Скидочная цена
      * @Type("int")
+     * Groups({"get"})
+     * Exclude(if="empty(object)")
      */
     public $salePrice;
 
     /**
      * @Type("MoySklad\Entity\Uom")
      * @var Uom
+     * Groups({"get"})
+     * Exclude(if="empty(object)")
      */
     public $uom;
 
     /**
      * @Type("float")
+     * Groups({"get"})
+     * Exclude(if="empty(object)")
      */
     public $stock;
 
     /**
      * @Type("float")
+     * Groups({"get"})
+     * Exclude(if="empty(object)")
      */
     public $inTransit;
 
     /**
      * @Type("float")
+     * Groups({"get"})
+     * Exclude(if="empty(object)")
      */
     public $reserve;
 
     /**
      * @Type("float")
+     * Groups({"get"})
+     * Exclude(if="empty(object)")
      */
     public $quantity;
 }

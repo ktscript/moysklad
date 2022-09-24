@@ -3,6 +3,8 @@
 namespace MoySklad\Entity\Document;
 
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\Exclude;
+use JMS\Serializer\Annotation\Groups;
 use MoySklad\Entity\MetaEntity;
 use MoySklad\Util\Object\Annotation\Generator;
 use MoySklad\Entity\Country;
@@ -53,6 +55,7 @@ class ProductEnterPosition extends MetaEntity
 
     /**
      * @Type("string")
+     * Exclude(if="empty(object)")
      */
     public $reason;
 }

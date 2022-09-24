@@ -3,26 +3,34 @@
 namespace MoySklad\Entity;
 
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\Exclude;
+use JMS\Serializer\Annotation\Groups;
+use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\ExclusionPolicy;
+use JMS\Serializer\Annotation\SkipWhenEmpty;
+
 use MoySklad\ApiClient;
 use MoySklad\Http\RequestExecutor;
 use MoySklad\Util\Exception\ApiClientException;
+use MoySklad\Util\Object\Annotation\Generator;
+
 
 class MetaEntity
 {
     /**
      * @Type("string")
      */
-//    public $id;
+    public $id;
 
     /**
      * @Type("string")
      */
-//    public $accountId;
+    public $accountId;
 
     /**
      * @Type("MoySklad\Entity\Meta")
      */
-    protected $meta;
+    public $meta;
 
     /**
      * MetaEntity constructor

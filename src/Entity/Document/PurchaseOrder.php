@@ -3,8 +3,14 @@
 namespace MoySklad\Entity\Document;
 
 use MoySklad\Entity\MetaEntity;
+use JMS\Serializer\Annotation\Exclude;
+use JMS\Serializer\Annotation\Groups;
+use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\SkipWhenEmpty;
+use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Type;
 use MoySklad\Util\Object\Annotation\Generator;
+
 
 class PurchaseOrder extends MetaEntity
 {

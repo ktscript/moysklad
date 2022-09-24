@@ -4,6 +4,8 @@ namespace MoySklad\Entity\Agent;
 
 use MoySklad\Entity\MetaEntity;
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\Exclude;
+use JMS\Serializer\Annotation\Groups;
 use MoySklad\Util\Object\Annotation\Generator;
 
 class Employee extends MetaEntity

@@ -4,7 +4,14 @@ namespace MoySklad\Entity\Agent;
 
 use MoySklad\Entity\MetaEntity;
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\Exclude;
+use JMS\Serializer\Annotation\Groups;
+use JMS\Serializer\Annotation\SkipWhenEmpty;
+
+use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\ExclusionPolicy;
 use MoySklad\Util\Object\Annotation\Generator;
+
 
 class Organization extends MetaEntity
 {

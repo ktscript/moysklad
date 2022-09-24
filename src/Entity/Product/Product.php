@@ -3,9 +3,16 @@
 namespace MoySklad\Entity\Product;
 
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\Exclude;
+use JMS\Serializer\Annotation\Groups;
+use JMS\Serializer\Annotation\SkipWhenEmpty;
 use MoySklad\Entity\StockTrait;
 use MoySklad\Entity\Uom;
 use MoySklad\Util\Object\Annotation\Generator;
+
+use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\ExclusionPolicy;
+
 
 class Product extends AbstractProduct
 {

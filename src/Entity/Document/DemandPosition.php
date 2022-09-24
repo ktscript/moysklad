@@ -3,7 +3,9 @@
 namespace MoySklad\Entity\Document;
 
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\Exclude;
 use MoySklad\Entity\MetaEntity;
+use JMS\Serializer\Annotation\Groups;
 use MoySklad\Util\Object\Annotation\Generator;
 
 class DemandPosition extends MetaEntity

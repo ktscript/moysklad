@@ -3,6 +3,7 @@
 namespace MoySklad\Entity\Metadata;
 
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\Exclude;
 
 /**
  * Class StatesMetadata for getting metadata for

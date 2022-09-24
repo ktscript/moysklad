@@ -3,15 +3,21 @@
 namespace MoySklad\Entity\Document;
 
 use MoySklad\Entity\MetaEntity;
+use JMS\Serializer\Annotation\Exclude;
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\Groups;
+use JMS\Serializer\Annotation\SkipWhenEmpty;
+use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\ExclusionPolicy;
 use MoySklad\Util\Object\Annotation\Generator;
+
 
 class CustomerOrder extends MetaEntity
 {
     /**
      * @Type("string")
      */
-    public $syncId;
+    public $syncId1;
 
     /**
      * @Type("DateTime<'Y-m-d H:i:s.v'>")

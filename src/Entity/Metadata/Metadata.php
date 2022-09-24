@@ -1,10 +1,11 @@
 <?php
 
 namespace MoySklad\Entity\Metadata;
-
+use MoySklad\Entity\MetaEntity;
 use JMS\Serializer\Annotation\Type;
-
-abstract class Metadata
+use JMS\Serializer\Annotation\Exclude;
+         
+abstract class Metadata extends MetaEntity
 {
     /**
      * @Type("MoySklad\Entity\Meta")

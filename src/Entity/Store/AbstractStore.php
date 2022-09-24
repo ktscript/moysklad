@@ -3,6 +3,8 @@
 namespace MoySklad\Entity\Store;
 
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\Exclude;
+use JMS\Serializer\Annotation\Groups;
 use MoySklad\Util\Object\Annotation\Generator;
 use MoySklad\Entity\MetaEntity;
 

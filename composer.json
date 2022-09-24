@@ -36,7 +36,8 @@
     "ext-json": "*",
     "jms/serializer": "^3.10",
     "doctrine/annotations": "^1.11",
-    "yogarine/doctrine-annotation-autoload": "^0.3.0"
+    "yogarine/doctrine-annotation-autoload": "^0.3.0",
+    "symfony/expression-language": "^5.4"
   },
   "autoload": {
     "psr-4": {

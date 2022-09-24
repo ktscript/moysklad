@@ -3,6 +3,8 @@
 namespace MoySklad\Entity\Document;
 
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\Exclude;
+use JMS\Serializer\Annotation\Groups;
 use MoySklad\Entity\MetaEntity;
 use MoySklad\Util\Object\Annotation\Generator;
 
@@ -26,6 +28,8 @@ class RetailSalesReturn extends MetaEntity
     /**
      * @Type("string")
      * @Generator()
+     * Exclude(if="empty(object)")
+     * Groups({"get"})
      */
     public $name;
 
@@ -192,6 +196,8 @@ class RetailSalesReturn extends MetaEntity
      *         "PATENT_BASED"
      *     }
      * )
+     * Exclude(if="empty(object)")
+     * Groups({"get"})
      */
     public $taxSystem;
 

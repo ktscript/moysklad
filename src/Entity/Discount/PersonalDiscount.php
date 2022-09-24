@@ -3,6 +3,8 @@
 namespace MoySklad\Entity\Discount;
 
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\Exclude;
+use JMS\Serializer\Annotation\Groups;
 
 class PersonalDiscount extends Discount
 {

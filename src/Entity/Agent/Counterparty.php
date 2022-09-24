@@ -4,7 +4,16 @@ namespace MoySklad\Entity\Agent;
 
 use MoySklad\Entity\MetaEntity;
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\Groups;
+use JMS\Serializer\Annotation\SkipWhenEmpty;
+use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\ExclusionPolicy;
+use JMS\Serializer\Annotation\Exclude;
 use MoySklad\Util\Object\Annotation\Generator;
+
+/**
+* ExclusionPolicy("all")
+*/
 
 class Counterparty extends MetaEntity
 {

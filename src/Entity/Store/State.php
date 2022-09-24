@@ -4,6 +4,8 @@ namespace MoySklad\Entity\Store;
 
 use JMS\Serializer\Annotation\Type;
 use MoySklad\Entity\MetaEntity;
+use JMS\Serializer\Annotation\Exclude;
+use JMS\Serializer\Annotation\Groups;
 
 class State extends MetaEntity
 {

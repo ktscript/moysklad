@@ -3,8 +3,16 @@
 namespace MoySklad\Entity\Document;
 
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\Exclude;
+use JMS\Serializer\Annotation\Groups;
+use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\ExclusionPolicy;
 use MoySklad\Entity\MetaEntity;
 use MoySklad\Util\Object\Annotation\Generator;
+
+/**
+* ExclusionPolicy("all")
+*/
 
 class Position extends MetaEntity
 {

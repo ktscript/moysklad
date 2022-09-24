@@ -11,6 +11,7 @@ use MoySklad\Client\Endpoint\GetMetadataAttributeEndpoint;
 use MoySklad\Client\Endpoint\PostEntitiesEndpoint;
 use MoySklad\Client\Endpoint\PostEntityEndpoint;
 use MoySklad\Client\Endpoint\PutEntityEndpoint;
+use MoySklad\Client\Endpoint\FirstEntityEndpoint;
 use MoySklad\Entity\Account;
 use MoySklad\Entity\Agent\Counterparty;
 use MoySklad\Entity\ContactPerson;
@@ -32,6 +33,7 @@ class CounterpartyClient extends EntityClientBase
         DeleteEntityEndpoint,
         GetMetadataAttributeEndpoint,
         PostEntitiesEndpoint,
+	FirstEntityEndpoint,
         DeleteEntitiesEndpoint;
 
     /**

@@ -3,6 +3,8 @@
 namespace MoySklad\Entity\Store;
 
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\Groups;
+use JMS\Serializer\Annotation\Exclude;
 
 class RetailStore extends AbstractStore
 {

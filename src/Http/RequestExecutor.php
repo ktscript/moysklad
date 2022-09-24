@@ -263,8 +263,58 @@ class RequestExecutor
     public function get(string $className)
     {
         $request = new Request(static::METHOD_GET, $this->buildFullUrl(), $this->headers);
-
         return $this->serializer->deserialize($this->executeRequest($request), $className, SerializerInstance::JSON_FORMAT);
+    }
+
+    /**
+     * @param string $className
+     * @return MetaEntity
+     * @throws ApiClientException
+     */
+    public function getOneFromMany(string $className)
+    {
+        $request = new Request(static::METHOD_GET, $this->buildFullUrl(), $this->headers);
+        $content = json_decode($this->executeRequest($request));
+
+        if ( isset($content->rows) && count($content->rows) ) {
+	        $row = json_encode( array_shift($content->rows) );
+	        return $this->serializer->deserialize($row, $className, SerializerInstance::JSON_FORMAT);
+        }
+
+        return null;
+    }
+
+    /**
+     * @param string $className
+     * @return MetaEntity|MetaEntity[]
+     * @throws ApiClientException
+     */
+    public static function correctionValues($obj)
+    {
+        foreach($obj as $k => $v) {
+            if (is_object($v) && get_class($v) === 'DateTime') $obj->{$k} = $v->format('Y-m-d H:i:s.v');
+            else if ((is_array($v) || is_object($v)) && count((array)$v)) {
+                if (is_object($obj)) $obj->{$k} = self::correctionValues($v);
+                if (is_array($obj)) $obj[$k] = self::correctionValues($v);
+            }
+        }
+
+        return $obj; 
+    }
+    
+    /**
+     * @param MetaEntity $body
+     * @param string $className
+     * @return string JSON_FORMAT
+     * @throws ApiClientException
+     */
+    public function reserialize($body, $className)
+    {
+        $context = SerializationContext::create()->setSerializeNull(false);
+        $updatedForDeserializedBody = json_encode(self::correctionValues($body));
+        $deserializedBody = $this->serializer->deserialize($updatedForDeserializedBody, $className, SerializerInstance::JSON_FORMAT);
+
+        return $this->serializer->serialize($deserializedBody, SerializerInstance::JSON_FORMAT, $context);
     }
 
     /**
@@ -276,13 +326,9 @@ class RequestExecutor
     {
         $strBody = null;
         if (!is_null($this->body)) {
-            //$context = SerializationContext::create()->setSerializeNull(true);
-            //$strBody = $this->serializer->serialize($this->body, SerializerInstance::JSON_FORMAT, $context);
-            $strBody = $this->serializer->serialize($this->body, SerializerInstance::JSON_FORMAT);
+            $strBody = $this->reserialize($this->body, $className);
         }
-
         $request = new Request(static::METHOD_POST, $this->buildFullUrl(), $this->headers, $strBody);
-
         return $this->serializer->deserialize($this->executeRequest($request), $className, SerializerInstance::JSON_FORMAT);
     }
 
@@ -295,9 +341,7 @@ class RequestExecutor
     {
         $strBody = null;
         if (!is_null($this->body)) {
-            //$context = SerializationContext::create()->setSerializeNull(true);
-            //$strBody = $this->serializer->serialize($this->body, SerializerInstance::JSON_FORMAT, $context);
-            $strBody = $this->serializer->serialize($this->body, SerializerInstance::JSON_FORMAT);
+            $strBody = $this->reserialize($this->body, $className);
         }
 
         $request = new Request(static::METHOD_PUT, $this->buildFullUrl(), $this->headers, $strBody);

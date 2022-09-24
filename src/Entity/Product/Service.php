@@ -3,8 +3,15 @@
 namespace MoySklad\Entity\Product;
 
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\Exclude;
+use JMS\Serializer\Annotation\Groups;
 use MoySklad\Util\Object\Annotation\Generator;
+use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\ExclusionPolicy;
 
+/**
+* ExclusionPolicy("all")
+*/
 class Service extends AbstractProduct
 {
     /**
@@ -19,6 +26,7 @@ class Service extends AbstractProduct
 
     /**
      * @Type("array<MoySklad\Entity\Attribute>")
+     * Exclude(if="!count(object)")
      */
     public $attributes = [];
 

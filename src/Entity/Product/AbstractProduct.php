@@ -2,8 +2,12 @@
 
 namespace MoySklad\Entity\Product;
 
-use MoySklad\Entity\MetaEntity;
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\Exclude;
+use JMS\Serializer\Annotation\Groups;
+use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\ExclusionPolicy;
+use MoySklad\Entity\MetaEntity;
 use MoySklad\Util\Object\Annotation\Generator;
 
 abstract class AbstractProduct extends MetaEntity
@@ -102,6 +106,7 @@ abstract class AbstractProduct extends MetaEntity
 
     /**
      * @Type("bool")
+
      */
     public $archived;
 
@@ -112,6 +117,7 @@ abstract class AbstractProduct extends MetaEntity
 
     /**
      * @Type("MoySklad\Entity\Agent\Employee")
+
      */
     public $owner;
 
