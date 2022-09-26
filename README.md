@@ -157,3 +157,24 @@ $api->entity()->purchaseorder()->first('name', 'my_name'); //берет перв
 
 2022-09-24:
 -Устранены проблемы срабатывания исключания jms на пустые поля.
+
+2022-09-25:
+-Добавлен метод fill()
+пример работы:
+```php
+$productSupply = new ProductSupply();
+$productSupply->fill([
+    'name' => 'my_name',
+    'organization' => $organization,
+    'store' => $store,
+    'agent' => $counterparty,
+    'positions' => $positionsList,
+]);
+```
+
+2022-09-26:
+-Добавлена сущность supply (приемка)
+пример работы:
+```php
+$supply = $api->entity()->supply()->create($productSupply);
+```
