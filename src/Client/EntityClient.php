@@ -321,6 +321,14 @@ class EntityClient
         return new ProductEnterClient($this->api);
     }
 
+    /**
+     * @return ProductSupplyClient
+     */
+    public function supply(): ProductSupplyClient
+    {
+        return new ProductSupplyClient($this->api);
+    }
+
 
     public function getAllClassObjects(string $class): array
     {
