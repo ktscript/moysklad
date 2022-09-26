@@ -144,7 +144,7 @@ $addressCity = $counterparty->legalAddressFull->city; // название гор
 $api->entity()->purchaseorder()->getList([StandardFilter::eq('name', 'my_name')]);
 ```
 2022-09-20:
--Добавлена возможность выборки единого варианта, метод first()
+Добавлена возможность выборки единого варианта, метод first()
 пример работы:
 ```php
 $api->entity()->purchaseorder()->first(); //берет первый из возвращаемого списка 
@@ -159,7 +159,7 @@ $api->entity()->purchaseorder()->first('name', 'my_name'); //берет перв
 -Устранены проблемы срабатывания исключания jms на пустые поля.
 
 2022-09-25:
--Добавлен метод fill()
+Добавлен метод fill()
 пример работы:
 ```php
 $productSupply = new ProductSupply();
@@ -173,7 +173,7 @@ $productSupply->fill([
 ```
 
 2022-09-26:
--Добавлена сущность supply (приемка)
+Добавлена сущность supply (приемка)
 пример работы:
 ```php
 $supply = $api->entity()->supply()->create($productSupply);
