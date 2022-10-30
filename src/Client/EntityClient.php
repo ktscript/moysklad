@@ -314,6 +314,14 @@ class EntityClient
     }
 
     /**
+     * @return PaymentOutClient
+     */
+    public function paymentout(): PaymentOutClient
+    {
+        return new PaymentOutClient($this->api);
+    }
+
+    /**
      * @return ProductEnterClient
      */
     public function enter(): ProductEnterClient
