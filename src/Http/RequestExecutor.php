@@ -51,6 +51,7 @@ class RequestExecutor
     private $headers = [
         'Content-Type' => 'application/json',
         'Accept'       => 'application/json;charset=utf-8',
+        'Accept-Encoding' => "gzip"
     ];
 
     /**
@@ -230,6 +231,7 @@ class RequestExecutor
     private function executeRequest(Request $request): string
     {
         try {
+            
             $response = $this->client->sendRequest($request);
 
             if ($response->getStatusCode() != 200 &&

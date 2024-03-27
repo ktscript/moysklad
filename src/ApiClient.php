@@ -6,6 +6,8 @@ use MoySklad\Client\EntityClient;
 use MoySklad\Http\GuzzleRequestSender;
 use MoySklad\Http\RequestSenderInterface;
 use MoySklad\Util\StringsTrait;
+use GuzzleHttp\Client;
+use MoySklad\Http\RequestExecutor;
 
 class ApiClient
 {
@@ -73,7 +75,11 @@ class ApiClient
 
         $this->host = $host;
         $this->client = $client ?? new GuzzleRequestSender();
-        $this->setCredentials($credentials);
+        $this->setCredentials($credentials);        
+
+        if ( empty($this->token) === true ) {
+            $this->getToken();
+        }
     }
 
     /**
@@ -87,6 +93,7 @@ class ApiClient
         } elseif (isset($credentials['login']) && isset($credentials['password'])) {
             $this->login = $credentials['login'];
             $this->password = $credentials['password'];
+            $this->token = base64_encode($credentials['login'].":".$credentials['password']);
         } else {
             throw new \Exception("Credential login, password or token must be set!");
         }
@@ -150,6 +157,18 @@ class ApiClient
      */
     public function getToken(): string
     {
+        $response = (new Client())->request('POST', $this->host . RequestExecutor::API_PATH . '/security/token', [
+            'headers' => [
+                'Authorization' => 'Basic '.base64_encode($this->login.':'.$this->password),
+                'Accept-Encoding' => "gzip"
+            ]
+        ]);
+
+        $body = $response->getBody();
+        $data = json_decode($body, true);
+        
+        $this->token = $data['access_token'] ?? null;
+
         return $this->token;
     }
 

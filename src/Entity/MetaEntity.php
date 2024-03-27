@@ -22,7 +22,7 @@ class MetaEntity
     /**
      * @Type("MoySklad\Entity\Meta")
      */
-    protected $meta;
+    public $meta;
 
     /**
      * MetaEntity constructor

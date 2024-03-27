@@ -13,29 +13,32 @@ use MoySklad\Client\Endpoint\GetMetadataEndpoint;
 use MoySklad\Client\Endpoint\PostEntitiesEndpoint;
 use MoySklad\Client\Endpoint\PostEntityEndpoint;
 use MoySklad\Client\Endpoint\PutEntityEndpoint;
-use MoySklad\Entity\ExpenseItem;
+use MoySklad\Entity\Document\PaymentOut;
 
-class ExpenseItemClient extends EntityClientBase
+/**
+ * Клиент исходящих платежей
+ */
+class PaymentInClient extends EntityClientBase
 {
     use
         GetEntitiesListEndpoint,
-        FirstEntityEndpoint,
         PostEntityEndpoint,
         PostEntitiesEndpoint,
         DeleteEntityEndpoint,
         DeleteEntitiesEndpoint,
+	    FirstEntityEndpoint,
         GetMetadataEndpoint,
         GetMetadataAttributeEndpoint,
         GetEntityEndpoint,
         PutEntityEndpoint;
 
     /**
-     * ExpenseItemClient constructor.
+     * ProjectClient constructor.
      * @param ApiClient $api
      */
     public function __construct(ApiClient $api)
     {
-        parent::__construct($api, '/entity/expenseitem/');
+        parent::__construct($api, '/entity/paymentin/');
     }
 
     /**
@@ -43,6 +46,6 @@ class ExpenseItemClient extends EntityClientBase
      */
     protected function getMetaEntityClass(): string
     {
-        return ExpenseItem::class;
+        return PaymentIn::class;
     }
 }

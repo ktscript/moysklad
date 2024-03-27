@@ -11,7 +11,7 @@ use MoySklad\Entity\ListEntity;
 /**
  * Оприходование товара
  */
-class PaymentOut extends MetaEntity
+class PaymentIn extends MetaEntity
 {
     /**
      * @Type("MoySklad\Entity\Agent\Employee")

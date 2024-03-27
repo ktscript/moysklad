@@ -24,7 +24,7 @@ class OrganizationClient extends EntityClientBase
 {
     use
         GetEntitiesListEndpoint,
-	FirstEntityEndpoint,
+	    FirstEntityEndpoint,
         PostEntityEndpoint,
         PostEntitiesEndpoint,
         DeleteEntityEndpoint,

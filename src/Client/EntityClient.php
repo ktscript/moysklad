@@ -322,6 +322,14 @@ class EntityClient
     }
 
     /**
+     * @return PaymentInClient
+     */
+    public function paymentin(): PaymentInClient
+    {
+        return new PaymentInClient($this->api);
+    }
+
+    /**
      * @return ProductEnterClient
      */
     public function enter(): ProductEnterClient
