@@ -183,7 +183,7 @@ $supply = $api->entity()->supply()->create($productSupply);
 Добавлены эндпоинты 
 
 2023-12-20:
-актуализация api
+актуализировано api
 
 2024-04-26:
 Добавлена сущность demand (отгрузка)
@@ -191,3 +191,6 @@ $supply = $api->entity()->supply()->create($productSupply);
 ```php
 $demand = $api->entity()->demand()->create($customerOrder);
 ```
+
+2024-06-25:
+актуализировано api в части авторизации
