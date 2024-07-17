@@ -33,13 +33,6 @@ $api = new ApiClient('host', true, [
     'login' => 'your_login',
     'password' => 'your_password',
 ]);
-
-//or
-
-$api = new ApiClient('host', true, [
-   'token' => 'your_token',
-]);
-
 ```
 
 ### 2. Работа с сущностями
