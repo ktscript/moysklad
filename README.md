@@ -194,3 +194,22 @@ $demand = $api->entity()->demand()->create($customerOrder);
 
 2024-06-25:
 актуализировано api в части авторизации
+
+2024-07-17:
+добавлены сущности
+Processing
+ProcessingMaterial
+ProcessingOrder
+ProcessingPlan
+ProcessingPlanFolder
+ProcessingPlanMaterial
+ProcessingPlanProduct
+ProcessingPlanStage                                                          
+ProcessingProcess
+ProductionTask
+ProductionTaskPosition
+ProductionTaskProduct
+и клиенты для работы с ними
+
+2024-07-17:
+доработан сериализатор
