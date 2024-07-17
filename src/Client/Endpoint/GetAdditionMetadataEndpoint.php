@@ -15,12 +15,12 @@ trait getAdditionMetadataEndpoint
      * @throws ApiClientException
      * @throws \Exception
      */
-    public function getAdditionMetadata(): ?AdditionMetadata //MetaEntity 
+    public function getAdditionMetadata(): ?AdditionMetadata //MetaEntity
     {
         if (get_parent_class($this) !== EntityClientBase::class) {
             throw new \Exception('The trait cannot be used outside the EntityClientBase class');
         }
 
-        return RequestExecutor::path($this->getApi(), $this->getPath().'metadata')->get(AdditionMetadata::class); //($this->getMetaEntityClass());//
+        return RequestExecutor::path($this->getApi(), $this->getPath().'metadata')->get(AdditionMetadata::class);
     }
 }

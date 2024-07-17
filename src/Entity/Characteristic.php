@@ -15,7 +15,7 @@ class Characteristic
     /**
      * @Type("MoySklad\Entity\Meta")
      */
-    public $meta;
+    protected $meta;
 
     /**
      * @Type("string")

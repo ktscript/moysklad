@@ -15,7 +15,7 @@ trait GetMetadataEndpoint
      * @throws ApiClientException
      * @throws \Exception
      */
-    public function getMetadata(): MetaEntity
+    public function getMetadata(): ?GeneralMetadata //MetaEntity
     {
         if (get_parent_class($this) !== EntityClientBase::class) {
             throw new \Exception('The trait cannot be used outside the EntityClientBase class');

@@ -11,6 +11,8 @@ use MoySklad\Client\Endpoint\GetMetadataAttributeEndpoint;
 use MoySklad\Client\Endpoint\PostEntitiesEndpoint;
 use MoySklad\Client\Endpoint\PostEntityEndpoint;
 use MoySklad\Client\Endpoint\PutEntityEndpoint;
+use MoySklad\Client\Endpoint\GetAdditionMetadataEndpoint;
+use MoySklad\Client\Endpoint\GetMetadataEndpoint;
 use MoySklad\Entity\AbstractListEntity;
 use MoySklad\Entity\Document\CustomerOrder;
 use MoySklad\Entity\ListEntity;
@@ -28,7 +30,9 @@ class CustomerOrderClient extends EntityClientBase
         DeleteEntityEndpoint,
         GetMetadataAttributeEndpoint,
         PostEntitiesEndpoint,
-        DeleteEntitiesEndpoint;
+        DeleteEntitiesEndpoint,
+        GetAdditionMetadataEndpoint,
+        GetMetadataEndpoint;
 
     /**
      * CustomerOrderClient constructor.
@@ -86,4 +90,41 @@ class CustomerOrderClient extends EntityClientBase
     {
         return CustomerOrder::class;
     }
+
+    /**
+     * @param string $id
+     * @param Param[] $params
+     * @return ListEntity
+     * @throws ApiClientException
+     */
+    public function getPositions(string $id, array $params = []): AbstractListEntity
+    {
+        /** @var $listEntity ListEntity */
+        $listEntity = RequestExecutor::path(
+            $this->getApi(),
+            $this->getPath() . $id . '/positions/'
+        )
+            ->params($params)
+            ->get(ListEntity::class);
+
+        return $listEntity;
+    }
+
+
+        /**
+     * @return ListEntity
+     * @throws ApiClientException
+     */
+    public function getStatuses(): AbstractListEntity
+    {
+        /** @var $listEntity ListEntity */
+        $listEntity = RequestExecutor::path(
+            $this->getApi(),
+            $this->getPath() . 'metadata'
+        )
+            ->get(ListEntity::class);
+
+        return $listEntity;
+    }
+
 }

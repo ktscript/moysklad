@@ -10,10 +10,6 @@ use MoySklad\Util\Exception\ApiClientException;
 use MoySklad\Util\Param\Param;
 
 use MoySklad\Util\Param\Limit;
-use MoySklad\Util\Param\Offset;
-use MoySklad\Util\Param\Order;
-use MoySklad\Util\Param\Search;
-use MoySklad\Util\Param\EntityFilter;
 use MoySklad\Util\Param\StandardFilter;
 
 trait FirstEntityEndpoint
@@ -24,7 +20,7 @@ trait FirstEntityEndpoint
      * @throws ApiClientException
      * @throws Exception
      */
-    public function first($param_name = 'code', $param_val = null)//: Array|ArrayObject //?object //
+    public function first($param_name = 'code', $param_val = null)
     {
         if ( get_parent_class($this) !== EntityClientBase::class ) {
             throw new \Exception('The trait cannot be used outside the EntityClientBase class');
@@ -38,6 +34,6 @@ trait FirstEntityEndpoint
 		: RequestExecutor::path($this->getApi(), $this->getPath())
             		->get($this->getListEntityClass());
 
-	return array_shift($entity->rows);
+	    return array_shift($entity->rows);
     }
 }

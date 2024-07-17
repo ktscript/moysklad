@@ -167,6 +167,11 @@ class CustomerOrder extends MetaEntity
     public $shippedSum;
 
     /**
+     * @Type("string")
+     */
+    public $shipmentAddress;
+
+    /**
      * @Type("int")
      */
     public $invoicedSum;

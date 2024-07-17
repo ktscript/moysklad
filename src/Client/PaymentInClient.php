@@ -13,7 +13,8 @@ use MoySklad\Client\Endpoint\GetMetadataEndpoint;
 use MoySklad\Client\Endpoint\PostEntitiesEndpoint;
 use MoySklad\Client\Endpoint\PostEntityEndpoint;
 use MoySklad\Client\Endpoint\PutEntityEndpoint;
-use MoySklad\Entity\Document\PaymentOut;
+use MoySklad\Client\Endpoint\PutOnlyEntityEndpoint;
+use MoySklad\Entity\Document\PaymentIn;
 
 /**
  * Клиент исходящих платежей
@@ -30,7 +31,8 @@ class PaymentInClient extends EntityClientBase
         GetMetadataEndpoint,
         GetMetadataAttributeEndpoint,
         GetEntityEndpoint,
-        PutEntityEndpoint;
+        PutEntityEndpoint,
+        PutOnlyEntityEndpoint;
 
     /**
      * ProjectClient constructor.

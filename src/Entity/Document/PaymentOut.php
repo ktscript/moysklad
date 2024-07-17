@@ -48,11 +48,6 @@ class PaymentOut extends MetaEntity
     /**
      * @Type("string")
      */
-    public $description;
-
-    /**
-     * @Type("string")
-     */
     public $externalCode;
 
     /**
@@ -92,41 +87,19 @@ class PaymentOut extends MetaEntity
     public $sum;
 
     /**
-     * @Type("float")
-     */
-    public $vatSum;
-
-    /**
      * @Type("MoySklad\Entity\Agent\Organization")
      * @Generator(type="object")
      */
     public $organization;
 
     /**
+     * @Type("MoySklad\Entity\Store\Store")
+     * @Generator(type="object")
+     */
+    public $store;
+
+    /**
      * @Type("string")
      */
     public $paymentPurpose;
-
-    /**
-     * @Type("MoySklad\Entity\Agent\Counterparty")
-     * @Generator(type="object")
-     */
-    public $agent;
-
-    /**
-     * @Type("MoySklad\Entity\ExpenseItem")
-     * @Generator(type="object")
-     */
-    public $expenseItem;
-
-    /**
-     * @Type("MoySklad\Entity\Contract")
-     */
-    public $contract;
-
-    /**
-     * @Type("MoySklad\Entity\State")
-     */
-    public $state;
-    
 }

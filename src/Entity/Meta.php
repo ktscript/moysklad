@@ -149,4 +149,13 @@ final class Meta
         $href = explode('?', $href);
         return reset($href);
     }
+
+    public function fill($attr = [])
+    {
+        array_map(function($k, $v) {
+            if ($v) $this->{$k} = $v;    
+        }, array_keys($attr), array_values($attr));
+
+        return $this;
+    }
 }

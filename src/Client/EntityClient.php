@@ -177,13 +177,44 @@ class EntityClient
     }
 
     /**
+     * @return ProductionTaskClient
+     */
+    public function productiontask(): ProductionTaskClient
+    {
+        return new ProductionTaskClient($this->api);
+    }
+
+    /**
+     * @return ProcessingPlanClient
+     */
+    public function processingplan(): ProcessingPlanClient
+    {
+        return new ProcessingPlanClient($this->api);
+    }
+
+    /**
+     * @return ProcessingProcessClient
+     */
+    public function processingprocess(): ProcessingProcessClient
+    {
+        return new ProcessingProcessClient($this->api);
+    }
+
+    /**
+     * @return ProcessingPlanFolderClient
+     */
+    public function processingplanfolder(): ProcessingPlanFolderClient
+    {
+        return new ProcessingPlanFolderClient($this->api);
+    }
+
+    /**
      * @return PurchaseOrderClient
      */
     public function purchaseorder(): PurchaseOrderClient
     {
         return new PurchaseOrderClient($this->api);
     }
-
 
     /**
      * @return ProjectClient
@@ -290,6 +321,23 @@ class EntityClient
     }
 
     /**
+     * @return DemandClient
+     */
+    public function demand(): DemandClient
+    {
+        return new DemandClient($this->api);
+    }
+
+    /**
+     * @return DemandPositionClient
+     */
+    public function demandposition(): DemandPositionClient
+    {
+        return new DemandPositionClient($this->api);
+    }
+
+
+    /**
      * @return RetailSalesReturnClient
      */
     public function retailsalesreturn(): RetailSalesReturnClient
@@ -314,19 +362,28 @@ class EntityClient
     }
 
     /**
-     * @return PaymentOutClient
-     */
-    public function paymentout(): PaymentOutClient
-    {
-        return new PaymentOutClient($this->api);
-    }
-
-    /**
      * @return PaymentInClient
      */
     public function paymentin(): PaymentInClient
     {
         return new PaymentInClient($this->api);
+    }
+
+    /**
+     * @return PaymentInClient
+     */
+    public function paymentinnew(): PaymentInNewClient
+    {
+        return new PaymentInNewClient($this->api);
+    }
+
+
+    /**
+     * @return PaymentOutClient
+     */
+    public function paymentout(): PaymentOutClient
+    {
+        return new PaymentOutClient($this->api);
     }
 
     /**

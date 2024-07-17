@@ -26,6 +26,12 @@ class DemandPosition extends MetaEntity
 
     /**
      * @Type("int")
+     * @Generator(min=1, max=100)
+     */
+    public $reserve;
+
+    /**
+     * @Type("int")
      * @Generator()
      */
     public $price;

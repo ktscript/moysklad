@@ -56,7 +56,7 @@ abstract class EntityClientBase
     public function fill($attr = [])
     {
         array_map(function($k, $v) {
-            $this->{$k} = $v;    
+            if ($v) $this->{$k} = $v;
         }, array_keys($attr), array_values($attr));
 
         return $this;

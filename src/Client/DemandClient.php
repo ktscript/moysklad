@@ -93,6 +93,7 @@ class DemandClient extends EntityClientBase
 
     public function createPositions(string $demandId, array $demandPositions): array
     {
+        \Log::debug('createPositions ' . json_encode($demandPositions));
         /** @var DemandPosition[] $demandPositions */
         return RequestExecutor::path($this->getApi(), $this->getPath().$demandId.'/positions')->bodyArray($demandPositions)->post("array<{$this->getMetaEntityClass()}>");
     }

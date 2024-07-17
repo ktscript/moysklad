@@ -22,7 +22,7 @@ class MetaEntity
     /**
      * @Type("MoySklad\Entity\Meta")
      */
-    public $meta;
+    protected $meta;
 
     /**
      * MetaEntity constructor
@@ -57,7 +57,7 @@ class MetaEntity
     public function fill($attr = [])
     {
         array_map(function($k, $v) {
-            $this->{$k} = $v;    
+            if ($v) $this->{$k} = $v;    
         }, array_keys($attr), array_values($attr));
 
         return $this;

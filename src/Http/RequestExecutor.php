@@ -197,10 +197,10 @@ class RequestExecutor
      */
     private function auth(ApiClient $api): self
     {
-        if ($api->getToken()) {
-            $this->headers['Authorization'] = 'Bearer '.$api->getToken();
-            return $this;
-        }
+        // if ($api->getToken()) {
+        //     $this->headers['Authorization'] = 'Bearer '.$api->getToken();
+        //     return $this;
+        // }
 
         $this->headers['Authorization'] = 'Basic '.base64_encode($api->getLogin().':'.$api->getPassword());
         return $this;
@@ -265,7 +265,7 @@ class RequestExecutor
     {
         $request = new Request(static::METHOD_GET, $this->buildFullUrl(), $this->headers);
 
-        return $this->serializer->deserialize($this->executeRequest($request), $className, SerializerInstance::JSON_FORMAT);
+        return @$this->serializer->deserialize($this->executeRequest($request), $className, SerializerInstance::JSON_FORMAT);
     }
 
     /**
@@ -277,12 +277,13 @@ class RequestExecutor
     {
         $strBody = null;
         if (!is_null($this->body)) {
-            $strBody = $this->serializer->serialize($this->body, SerializerInstance::JSON_FORMAT);
+            $strBody = @$this->serializer->serialize($this->body, SerializerInstance::JSON_FORMAT);
         }
 
         $request = new Request(static::METHOD_POST, $this->buildFullUrl(), $this->headers, $strBody);
-
-        return $this->serializer->deserialize($this->executeRequest($request), $className, SerializerInstance::JSON_FORMAT);
+        \Log::debug('post '. ($this->buildFullUrl()));
+        \Log::debug('post1 '. ($strBody));
+        return @$this->serializer->deserialize($this->executeRequest($request), $className, SerializerInstance::JSON_FORMAT);
     }
 
     /**
@@ -294,12 +295,13 @@ class RequestExecutor
     {
         $strBody = null;
         if (!is_null($this->body)) {
-            $strBody = $this->serializer->serialize($this->body, SerializerInstance::JSON_FORMAT);
+            $strBody = @$this->serializer->serialize($this->body, SerializerInstance::JSON_FORMAT);
         }
-
+        \Log::debug('PUT0 '. ($this->buildFullUrl()));
+        \Log::debug('PUT2 '. ($strBody));
         $request = new Request(static::METHOD_PUT, $this->buildFullUrl(), $this->headers, $strBody);
 
-        return $this->serializer->deserialize($this->executeRequest($request) ?: "{}", $className, SerializerInstance::JSON_FORMAT);
+        return @$this->serializer->deserialize($this->executeRequest($request) ?: "{}", $className, SerializerInstance::JSON_FORMAT);
     }
 
     /**

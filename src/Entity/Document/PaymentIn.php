@@ -128,5 +128,10 @@ class PaymentIn extends MetaEntity
      * @Type("MoySklad\Entity\State")
      */
     public $state;
-    
+
+    /**
+     * @Type("array<MoySklad\Entity\MetaEntity>")
+     */
+    public $operations;
+
 }
