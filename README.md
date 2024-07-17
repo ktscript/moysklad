@@ -178,3 +178,19 @@ $productSupply->fill([
 ```php
 $supply = $api->entity()->supply()->create($productSupply);
 ```
+
+2023-05-14:
+Добавлены эндпоинты 
+
+2023-12-20:
+актуализировано api
+
+2024-04-26:
+Добавлена сущность demand (отгрузка)
+пример работы:
+```php
+$demand = $api->entity()->demand()->create($customerOrder);
+```
+
+2024-06-25:
+актуализировано api в части авторизации
