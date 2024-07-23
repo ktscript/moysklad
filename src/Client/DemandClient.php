@@ -67,24 +67,6 @@ class DemandClient extends EntityClientBase
         return $listEntity;
     }
 
-    // public function createPositions(string $id, array $demandPositions): array
-    // {
-    //     $className = DemandPosition::class;
-    //     /** @var DemandPosition[] $demandPositions */
-    //     $demandPositions = RequestExecutor::path($this->getApi(), $this->getPath().$id.'/positions')->bodyArray($demandPositions)->post("array<{$className}>");
-
-    //     return $demandPositions;
-    // }
-
-    // public function createPosition(string $id, DemandPosition $demandPositions): AbstractListEntity
-    // {
-    //     $className = DemandPosition::class;
-    //     /** @var DemandPosition[] $taskNotes */
-    //     $demandPositions = RequestExecutor::path($this->getApi(), $this->getPath().$id.'/positions')->body($demandPositions)->post($className);
-
-    //     return $demandPositions;
-    // }
-
     public function createPosition(DemandPosition $demandPosition): AbstractListEntity
     {
         /** @var DemandPosition $demandPosition */
@@ -93,7 +75,6 @@ class DemandClient extends EntityClientBase
 
     public function createPositions(string $demandId, array $demandPositions): array
     {
-        \Log::debug('createPositions ' . json_encode($demandPositions));
         /** @var DemandPosition[] $demandPositions */
         return RequestExecutor::path($this->getApi(), $this->getPath().$demandId.'/positions')->bodyArray($demandPositions)->post("array<{$this->getMetaEntityClass()}>");
     }

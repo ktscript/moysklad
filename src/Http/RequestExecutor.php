@@ -231,7 +231,7 @@ class RequestExecutor
     private function executeRequest(Request $request): string
     {
         try {
-            
+
             $response = $this->client->sendRequest($request);
 
             if ($response->getStatusCode() != 200 &&
@@ -281,8 +281,7 @@ class RequestExecutor
         }
 
         $request = new Request(static::METHOD_POST, $this->buildFullUrl(), $this->headers, $strBody);
-        \Log::debug('post '. ($this->buildFullUrl()));
-        \Log::debug('post1 '. ($strBody));
+
         return @$this->serializer->deserialize($this->executeRequest($request), $className, SerializerInstance::JSON_FORMAT);
     }
 
@@ -297,8 +296,7 @@ class RequestExecutor
         if (!is_null($this->body)) {
             $strBody = @$this->serializer->serialize($this->body, SerializerInstance::JSON_FORMAT);
         }
-        \Log::debug('PUT0 '. ($this->buildFullUrl()));
-        \Log::debug('PUT2 '. ($strBody));
+
         $request = new Request(static::METHOD_PUT, $this->buildFullUrl(), $this->headers, $strBody);
 
         return @$this->serializer->deserialize($this->executeRequest($request) ?: "{}", $className, SerializerInstance::JSON_FORMAT);

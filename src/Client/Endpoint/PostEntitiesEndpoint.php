@@ -23,4 +23,19 @@ trait PostEntitiesEndpoint
 
         return RequestExecutor::path($this->getApi(), $this->getPath())->bodyArray($entities)->post("array<{$this->getMetaEntityClass()}>");
     }
+
+    /**
+     * @param MetaEntity[] $entities
+     * @return MetaEntity[]
+     * @throws ApiClientException
+     * @throws \Exception
+     */
+    public function massCreate(array $entities): array
+    {
+        if (get_parent_class($this) !== EntityClientBase::class) {
+            throw new \Exception('The trait cannot be used outside the EntityClientBase class');
+        }
+
+        return RequestExecutor::path($this->getApi(), $this->getPath())->bodyArray($entities)->post("array<{$this->getMetaEntityClass()}>");
+    }
 }

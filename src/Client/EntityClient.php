@@ -209,6 +209,16 @@ class EntityClient
     }
 
     /**
+     * @return ProcessingOrderClient
+     */
+    public function processingorder(): ProcessingOrderClient
+    {
+        return new ProcessingOrderClient($this->api);
+    }
+
+
+
+    /**
      * @return PurchaseOrderClient
      */
     public function purchaseorder(): PurchaseOrderClient
