@@ -184,24 +184,10 @@ $demand = $api->entity()->demand()->create($customerOrder);
 
 2024-07-17:
 добавлены сущности
-Processing
-ProcessingMaterial
-ProcessingPlan
-ProcessingPlanFolder
-ProcessingPlanMaterial
-ProcessingPlanProduct
-ProcessingPlanStage                                                          
-ProcessingProcess
-ProductionTask
-ProductionTaskPosition
-ProductionTaskProduct
-и клиенты для работы с ними
+Processing, ProcessingMaterial, ProcessingPlan, ProcessingPlanFolder, ProcessingPlanMaterial, ProcessingPlanProduct, ProcessingPlanStage, ProcessingProcess, ProductionTask, ProductionTaskPosition, ProductionTaskProduct и клиенты для работы с ними
 
 2024-07-17:
 доработан сериализатор
 
 2024-07-23:
-добавлены сущности
-ProcessingOrder
-ProcessingOrderPosition
-и клиенты для работы с ними
+добавлены сущности ProcessingOrder, ProcessingOrderPosition и клиенты для работы с ними
