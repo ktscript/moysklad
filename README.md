@@ -1,13 +1,7 @@
 # PHP SDK Moysklad API 1.2 AddOn
-
-Это расширение библиотеки от cdekmarketteam/moysklad.
-Помимо прочего планируется разработка более подробного описания работы с библиотекой.
-
-Перечень изменений добавлен ниже.
-
 --------------------------------------------------------------------------------------
 
-## Интро от создателей библиотеки:
+## Введение:
 
 Данная библиотека предназначена для удобной работы с API Remap версии 1.2 МоегоСклада. 
 Она содержит набор функций, позволяющий совершать базовые операции над сущностями (создание, чтение, изменение, удаление).
@@ -135,7 +129,7 @@ $addressCity = $counterparty->legalAddressFull->city; // название гор
 [Moysklad API 1.2 Doc](https://dev.moysklad.ru/doc/api/remap/1.2/)
 
 
-## Корректировки
+## Перечень изменений :
 
 2022-09-08:
 Добавлена возможность работы с Заявками поставщика (purchaseorder)
@@ -197,19 +191,10 @@ $demand = $api->entity()->demand()->create($customerOrder);
 
 2024-07-17:
 добавлены сущности
-Processing
-ProcessingMaterial
-ProcessingOrder
-ProcessingPlan
-ProcessingPlanFolder
-ProcessingPlanMaterial
-ProcessingPlanProduct
-ProcessingPlanStage                                                          
-ProcessingProcess
-ProductionTask
-ProductionTaskPosition
-ProductionTaskProduct
-и клиенты для работы с ними
+Processing, ProcessingMaterial, ProcessingPlan, ProcessingPlanFolder, ProcessingPlanMaterial, ProcessingPlanProduct, ProcessingPlanStage, ProcessingProcess, ProductionTask, ProductionTaskPosition, ProductionTaskProduct и клиенты для работы с ними
 
 2024-07-17:
 доработан сериализатор
+
+2024-07-23:
+добавлены сущности ProcessingOrder, ProcessingOrderPosition и клиенты для работы с ними
