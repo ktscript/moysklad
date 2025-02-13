@@ -198,3 +198,6 @@ Processing, ProcessingMaterial, ProcessingPlan, ProcessingPlanFolder, Processing
 
 2024-07-23:
 добавлены сущности ProcessingOrder, ProcessingOrderPosition и клиенты для работы с ними
+
+2025-02-12
+отлажена работа отдельных компонентов
