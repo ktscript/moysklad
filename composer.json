@@ -1,6 +1,6 @@
 {
   "name": "ktscript/moysklad",
-  "description": "PHP SDK MoySklad API 1.2 AddOn",
+  "description": "PHP SDK Moysklad API 1.2 AddOn",
   "keywords": [
     "moysklad",
     "rest",
@@ -15,14 +15,19 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "ktscript",
-      "email": "webdev@ktscript.ru",
-      "role": "master, developer"
-    },
-    {
       "name": "Dmitry Zykov",
       "email": "d.i.zykov@gmail.com",
       "role": "master"
+    },
+    {
+      "name": "Viktor Fursenko",
+      "email": "va.fursenko@yandex.ru",
+      "role": "developer"
+    },
+    {
+      "name": "ktscript",
+      "email": "webdev@ktscript.ru",
+      "role": "master, developer"
     }
   ],
   "require": {

@@ -13,6 +13,7 @@ use MoySklad\Client\Endpoint\GetMetadataEndpoint;
 use MoySklad\Client\Endpoint\PostEntitiesEndpoint;
 use MoySklad\Client\Endpoint\PostEntityEndpoint;
 use MoySklad\Client\Endpoint\PutEntityEndpoint;
+use MoySklad\Client\Endpoint\GetAdditionMetadataEndpoint;
 use MoySklad\Entity\AbstractListEntity;
 use MoySklad\Entity\Document\ProcessingOrderPosition;
 use MoySklad\Entity\Document\ProcessingOrder;
@@ -35,6 +36,7 @@ class ProcessingOrderClient extends EntityClientBase
         DeleteEntitiesEndpoint,
         GetMetadataEndpoint,
         GetMetadataAttributeEndpoint,
+        GetAdditionMetadataEndpoint,
         GetEntityEndpoint,
         PutEntityEndpoint;
 

@@ -91,7 +91,7 @@ class ProcessingOrder extends MetaEntity
     public $name;
 
     /**
-     * @Type("MoySklad\Entity\Organization")
+     * @Type("MoySklad\Entity\Agent\Organization")
      * @Generator(type="object", anyFromExists=true)
      */
     public $organization;
@@ -102,7 +102,7 @@ class ProcessingOrder extends MetaEntity
     public $owner;
 
     /**
-     * @Type("array<MoySklad\Entity\Position>")
+     * @Type("array<MoySklad\Entity\Document\ProcessingOrderPosition>")
      * @Generator(type="objectArray")
      */
     public $positions = [];
@@ -113,7 +113,7 @@ class ProcessingOrder extends MetaEntity
     public $printed;
 
     /**
-     * @Type("MoySklad\Entity\ProcessingPlan")
+     * @Type("MoySklad\Entity\Document\ProcessingPlan")
      * @Generator(type="object", anyFromExists=true)
      */
     public $processingPlan;
@@ -146,7 +146,7 @@ class ProcessingOrder extends MetaEntity
     public $state;
 
     /**
-     * @Type("MoySklad\Entity\Store")
+     * @Type("MoySklad\Entity\Store\Store")
      * @Generator(type="object", anyFromExists=true)
      */
     public $store;
@@ -160,4 +160,5 @@ class ProcessingOrder extends MetaEntity
      * @Type("DateTime<'Y-m-d H:i:s.v'>")
      */
     public $updated;
+
 }

@@ -15,6 +15,7 @@ use MoySklad\Client\Endpoint\PostEntityEndpoint;
 use MoySklad\Client\Endpoint\PutEntityEndpoint;
 use MoySklad\Entity\AbstractListEntity;
 use MoySklad\Entity\Document\ProcessingPosition;
+use MoySklad\Entity\Document\Processing;
 use MoySklad\Entity\ListEntity;
 use MoySklad\Util\Exception\ApiClientException;
 use MoySklad\Util\Param\Param;

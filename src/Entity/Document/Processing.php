@@ -70,7 +70,7 @@ class Processing extends MetaEntity
     public $id;
 
     /**
-     * @Type("array<MoySklad\Entity\Material>")
+     * @Type("array<MoySklad\Entity\Document\ProcessingMaterial>")
      * @Generator(type="objectArray")
      */
     public $materials = [];
@@ -127,7 +127,7 @@ class Processing extends MetaEntity
     public $processingSum;
 
     /**
-     * @Type("array<MoySklad\Entity\Product>")
+     * @Type("array<MoySklad\Entity\Product\Product>")
      * @Generator(type="objectArray")
      */
     public $products = [];
